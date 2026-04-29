@@ -17,7 +17,7 @@ const CONFIG = {
     },
     // Vertical position: negative = lower, positive = higher
     height: {
-        mobile: -10.8,      // Mobile Y position
+        mobile: -0.5,      // Mobile Y position
         desktop: 0      // Desktop Y position
     },
     // Camera distance: lower = closer to model
@@ -357,11 +357,12 @@ function initScrollRotation() {
 
     const isMobile = window.innerWidth <= 768;
     
-    // Get original scale for reference
-    const originalScale = coffeeModel.userData.originalScale || (isMobile ? 1.2 : 1);
+    // Get original scale and position from CONFIG
+    const originalScale = coffeeModel.userData.originalScale || (isMobile ? CONFIG.size.mobile : CONFIG.size.desktop);
+    const baseYPosition = isMobile ? CONFIG.height.mobile : CONFIG.height.desktop;
     
-    // Set initial state - center the model
-    coffeeModel.position.set(0, 0, 0);
+    // Set initial state - use CONFIG values
+    coffeeModel.position.set(0, baseYPosition, 0);
     coffeeModel.rotation.set(0, 0, 0);
     coffeeModel.scale.setScalar(originalScale);
 
@@ -375,9 +376,10 @@ function initScrollRotation() {
         }
     });
 
-    // Gentle floating Y motion (subtle up/down)
+    // Gentle floating Y motion (relative to CONFIG.height base)
+    const endYPosition = baseYPosition + (isMobile ? -0.3 : -0.5);
     scrollTriggerInstance.to(coffeeModel.position, {
-        y: isMobile ? -0.3 : -0.5, // Very subtle downward drift
+        y: endYPosition,
         ease: 'none'
     }, 0);
 
