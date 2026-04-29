@@ -18,7 +18,7 @@ const CONFIG = {
     // Vertical position: negative = lower, positive = higher
     height: {
         mobile: -0.5,      // Mobile Y position
-        desktop: 0      // Desktop Y position
+        desktop: -1.2      // Desktop Y position
     },
     // Camera distance: lower = closer to model
     camera: {
@@ -376,24 +376,54 @@ function initScrollRotation() {
         }
     });
 
-    // Gentle floating Y motion (relative to CONFIG.height base)
-    const endYPosition = baseYPosition + (isMobile ? -0.3 : -0.5);
-    scrollTriggerInstance.to(coffeeModel.position, {
-        y: endYPosition,
-        ease: 'none'
-    }, 0);
-
-    // Continuous Y-axis rotation (full spins)
-    scrollTriggerInstance.to(coffeeModel.rotation, {
-        y: Math.PI * 2, // One full rotation over the scroll
-        ease: 'none'
-    }, 0);
-
-    // Very subtle X tilt (leans back slightly as scroll)
-    scrollTriggerInstance.to(coffeeModel.rotation, {
-        x: isMobile ? -0.15 : -0.2,
-        ease: 'none'
-    }, 0);
+    if (isMobile) {
+        // Mobile: Custom wave/S-curve path following scroll
+        ScrollTrigger.create({
+            trigger: '#hero',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 1,
+            onUpdate: (self) => {
+                if (!coffeeModel) return;
+                const progress = self.progress;
+                
+                // S-curve X motion: starts center, curves right, then left
+                // Using sine wave with phase shift for smooth S-curve
+                const xOffset = Math.sin(progress * Math.PI * 2) * 1.2;
+                
+                // Y motion: overall downward drift with wave
+                const yOffset = baseYPosition - (progress * 1.5) + (Math.sin(progress * Math.PI * 4) * 0.2);
+                
+                // Z motion: subtle depth change
+                const zOffset = Math.cos(progress * Math.PI * 2) * 0.5;
+                
+                coffeeModel.position.x = xOffset;
+                coffeeModel.position.y = yOffset;
+                coffeeModel.position.z = zOffset;
+                
+                // Rotation: spin + tilt following the curve
+                coffeeModel.rotation.y = progress * Math.PI * 3;
+                coffeeModel.rotation.z = -xOffset * 0.3; // Bank into the turn
+                coffeeModel.rotation.x = -0.1 - (progress * 0.2);
+            }
+        });
+    } else {
+        // Desktop: Simple subtle animation
+        scrollTriggerInstance.to(coffeeModel.position, {
+            y: baseYPosition - 0.5,
+            ease: 'none'
+        }, 0);
+        
+        scrollTriggerInstance.to(coffeeModel.rotation, {
+            y: Math.PI * 2,
+            ease: 'none'
+        }, 0);
+        
+        scrollTriggerInstance.to(coffeeModel.rotation, {
+            x: -0.2,
+            ease: 'none'
+        }, 0);
+    }
 
     // Idle rotation continues when not scrolling
     ScrollTrigger.create({
