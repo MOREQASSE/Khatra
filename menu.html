@@ -43,47 +43,408 @@
         </div>
     </section>
 
-    <!-- Menu Categories Navigation -->
-    <nav class="menu-categories-nav" aria-label="Menu categories">
+    <!-- Filter & Promo Section -->
+    <section class="menu-filters">
         <div class="container">
-            <ul class="category-tabs" id="category-tabs">
-                <!-- Dynamically populated -->
-            </ul>
+            <!-- Loyalty Card Promo -->
+            <a href="loyalty.html" class="loyalty-promo-card">
+                <div class="loyalty-content">
+                    <div class="loyalty-icon">
+                        <i class="ph ph-crown"></i>
+                    </div>
+                    <div class="loyalty-text">
+                        <h3>Carte Fidélité</h3>
+                        <p>Gagnez des points à chaque achat et profitez de boissons gratuites !</p>
+                    </div>
+                    <div class="loyalty-cta">
+                        <span>Rejoignez-nous</span>
+                        <i class="ph ph-arrow-right"></i>
+                    </div>
+                </div>
+                <div class="loyalty-glow"></div>
+            </a>
+
+            <!-- Category Filter -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="ph ph-squares-four"></i>
+                    <span>Tout</span>
+                </button>
+                <button class="filter-btn" data-filter="espresso">
+                    <i class="ph ph-coffee"></i>
+                    <span>Espresso</span>
+                </button>
+                <button class="filter-btn" data-filter="lattes">
+                    <i class="ph ph-coffee"></i>
+                    <span>Lattes</span>
+                </button>
+                <button class="filter-btn" data-filter="ice-coffee">
+                    <i class="ph ph-ice-cream"></i>
+                    <span>Ice Coffee</span>
+                </button>
+                <button class="filter-btn" data-filter="chocolat">
+                    <i class="ph ph-coffee"></i>
+                    <span>Chocolat</span>
+                </button>
+                <button class="filter-btn" data-filter="ice-tea">
+                    <i class="ph ph-cup-hot"></i>
+                    <span>Ice Tea</span>
+                </button>
+                <button class="filter-btn" data-filter="mojito">
+                    <i class="ph ph-glass-cocktail"></i>
+                    <span>Mojito</span>
+                </button>
+                <button class="filter-btn" data-filter="pina-colada">
+                    <i class="ph ph-glass-cocktail"></i>
+                    <span>Pina Colada</span>
+                </button>
+                <button class="filter-btn" data-filter="the-special">
+                    <i class="ph ph-leaf"></i>
+                    <span>Thé</span>
+                </button>
+            </div>
         </div>
-    </nav>
+    </section>
 
     <!-- Menu Content -->
     <main class="menu-main">
         <div class="container">
-            <!-- Loading State -->
-            <div class="menu-loading" id="menu-loading">
-                <div class="loading-spinner"></div>
-                <p>Loading our delicious menu...</p>
-            </div>
+            <div class="menu-container">
+                
+                <!-- ESPRESSO -->
+                <section class="menu-category" id="espresso">
+                    <div class="category-header">
+                        <i class="ph ph-coffee"></i>
+                        <h2>LES ESSENTIELS <span>(ESPRESSO)</span></h2>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Espresso" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Espresso</h3>
+                                <p class="item-desc">(italien, Normal, Léger...)</p>
+                            </div>
+                            <span class="item-price">06 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Double Espresso" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Double Espresso</h3>
+                            </div>
+                            <span class="item-price">12 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Allongé" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Allongé</h3>
+                            </div>
+                            <span class="item-price">08 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Americano" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Americano</h3>
+                            </div>
+                            <span class="item-price">08 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Cortado Essentiel" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Cortado Essentiel</h3>
+                            </div>
+                            <span class="item-price">15 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Espresso Macchiatto" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Espresso Macchiatto</h3>
+                            </div>
+                            <span class="item-price">08 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Viennois Caramel" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Viennois Caramel</h3>
+                            </div>
+                            <span class="item-price">12 Dh</span>
+                        </div>
+                    </div>
+                </section>
 
-            <!-- Error State -->
-            <div class="menu-error" id="menu-error" style="display: none;">
-                <i class="ph ph-warning-circle"></i>
-                <p>Unable to load menu. Please try again later.</p>
-                <button class="btn btn-primary" id="retry-btn">Retry</button>
-            </div>
+                <!-- LATTES & CAPPUCCINOS -->
+                <section class="menu-category" id="lattes">
+                    <div class="category-header">
+                        <i class="ph ph-coffee"></i>
+                        <h2>LES ONCTUEUX <span>(LATTES & CAPPUCCINOS)</span></h2>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Cappuccino Classique" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Cappuccino Classique</h3>
+                            </div>
+                            <span class="item-price">08 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Cappuccino Extra" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Cappuccino Extra</h3>
+                                <p class="item-desc">(Caramel, Vanille, Chocolat...)</p>
+                            </div>
+                            <span class="item-price">12 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Café crème" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Café crème</h3>
+                            </div>
+                            <span class="item-price">08 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Latte Macchiatto" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Latte Macchiatto</h3>
+                            </div>
+                            <span class="item-price">08 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Caramel Macchiatto" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Caramel Macchiatto</h3>
+                            </div>
+                            <span class="item-price">12 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Moitié-Moitié" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Moitié-Moitié</h3>
+                            </div>
+                            <span class="item-price">08 Dh</span>
+                        </div>
+                    </div>
+                </section>
 
-            <!-- Menu Container -->
-            <div class="menu-container" id="menu-container" style="display: none;">
-                <!-- Dynamically populated from JSON -->
+                <!-- ICE COFFEE -->
+                <section class="menu-category" id="ice-coffee">
+                    <div class="category-header">
+                        <i class="ph ph-ice-cream"></i>
+                        <h2>ICE COFFEE</h2>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Ice Americano" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Ice Americano</h3>
+                            </div>
+                            <span class="item-price">13 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Ice Latte" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Ice Latte</h3>
+                            </div>
+                            <span class="item-price">18 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Ice Caramel Macchiato" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Ice Caramel Macchiato</h3>
+                            </div>
+                            <span class="item-price">23 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Ice Mocha" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Ice Mocha</h3>
+                            </div>
+                            <span class="item-price">18 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Ice Latte Mocha" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Ice Latte Mocha</h3>
+                            </div>
+                            <span class="item-price">18 Dh</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CHOCOLAT -->
+                <section class="menu-category" id="chocolat">
+                    <div class="category-header">
+                        <i class="ph ph-coffee"></i>
+                        <h2>CHOCOLAT</h2>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Chocolat Chaud" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Chocolat Chaud</h3>
+                            </div>
+                            <span class="item-price">12 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Chocolat Fondu" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Chocolat Fondu</h3>
+                            </div>
+                            <span class="item-price">17 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Chocolat Fondu Extra" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Chocolat Fondu Extra</h3>
+                                <p class="item-desc">(spéculoos, Noisette, caramel...)</p>
+                            </div>
+                            <span class="item-price">20 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Chocolat Viennois" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Chocolat Viennois</h3>
+                            </div>
+                            <span class="item-price">23 Dh</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ICE TEA -->
+                <section class="menu-category" id="ice-tea">
+                    <div class="category-header">
+                        <i class="ph ph-cup-hot"></i>
+                        <h2>ICE TEA</h2>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Ice Tea Classique" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Ice Tea Classique</h3>
+                            </div>
+                            <span class="item-price">19 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Ice Tea Fruité" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Ice Tea Fruité</h3>
+                                <p class="item-desc">(pêche, Fraise, Mangue...)</p>
+                            </div>
+                            <span class="item-price">23 Dh</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MOJITO -->
+                <section class="menu-category" id="mojito">
+                    <div class="category-header">
+                        <i class="ph ph-glass-cocktail"></i>
+                        <h2>LES RAFRAÎCHISSANTS MOJITO</h2>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Mojito Classique" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Mojito Classique</h3>
+                            </div>
+                            <span class="item-price">18 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Mojito Fruité" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Mojito Fruité</h3>
+                                <p class="item-desc">(Fraise, Framboise, Mangue...)</p>
+                            </div>
+                            <span class="item-price">21 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Mojito Virgin" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Mojito Virgin</h3>
+                            </div>
+                            <span class="item-price">18 Dh</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PINA COLADA -->
+                <section class="menu-category" id="pina-colada">
+                    <div class="category-header">
+                        <i class="ph ph-glass-cocktail"></i>
+                        <h2>PINA COLADA</h2>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Pina Fraise" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Pina Fraise</h3>
+                            </div>
+                            <span class="item-price">19 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Pina Coco" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Pina Coco</h3>
+                            </div>
+                            <span class="item-price">23 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Pina mangue" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Pina mangue</h3>
+                            </div>
+                            <span class="item-price">23 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Dragon Pina Colada" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Dragon Pina Colada</h3>
+                            </div>
+                            <span class="item-price">23 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Pina framboise" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Pina framboise</h3>
+                            </div>
+                            <span class="item-price">19 Dh</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- THÉ SPÉCIAL -->
+                <section class="menu-category" id="the-special">
+                    <div class="category-header">
+                        <i class="ph ph-leaf"></i>
+                        <h2>THÉ SPÉCIAL</h2>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Tisane Au Choix" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Tisane Au Choix</h3>
+                                <p class="item-desc">(verviene, camomille, thym...)</p>
+                            </div>
+                            <span class="item-price">07 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Lait Au Verveine" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Lait Au Verveine</h3>
+                            </div>
+                            <span class="item-price">08 Dh</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image"><img src="images/menu.jpg" alt="Thé Lipton" loading="lazy"></div>
+                            <div class="item-info">
+                                <h3>Thé Lipton</h3>
+                            </div>
+                            <span class="item-price">07 Dh</span>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </div>
     </main>
-
-    <!-- Featured Items Section -->
-    <section class="featured-items">
-        <div class="container">
-            <h2 class="section-title text-center">Customer Favorites</h2>
-            <div class="featured-grid" id="featured-grid">
-                <!-- Dynamically populated -->
-            </div>
-        </div>
-    </section>
 
     <!-- Dietary Info Section -->
     <section class="dietary-info">
@@ -157,11 +518,41 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Initialize menu page
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof loadMenuData === 'function') {
-                loadMenuData();
-            }
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const categories = document.querySelectorAll('.menu-category');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show/hide categories
+                    categories.forEach(category => {
+                        if (filter === 'all' || category.id === filter) {
+                            category.style.display = 'block';
+                            gsap.fromTo(category, 
+                                { opacity: 0, y: 20 },
+                                { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }
+                            );
+                        } else {
+                            category.style.display = 'none';
+                        }
+                    });
+                    
+                    // Smooth scroll to menu
+                    if (filter !== 'all') {
+                        const target = document.getElementById(filter);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>
