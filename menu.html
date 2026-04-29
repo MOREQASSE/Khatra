@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our artisan coffee menu at Khatra Coffee Shop">
+    <title>Our Menu | Khatra Coffee</title>
+    
+    <!-- Phosphor Icons CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.webp" alt="Khatra Coffee" width="120" height="60">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active" aria-current="page">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Hero Section -->
+    <section class="page-hero menu-hero">
+        <div class="page-hero-content">
+            <h1 class="page-title">Our Menu</h1>
+            <p class="page-subtitle">Carefully crafted beverages and treats for every taste</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories Navigation -->
+    <nav class="menu-categories-nav" aria-label="Menu categories">
+        <div class="container">
+            <ul class="category-tabs" id="category-tabs">
+                <!-- Dynamically populated -->
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Menu Content -->
+    <main class="menu-main">
+        <div class="container">
+            <!-- Loading State -->
+            <div class="menu-loading" id="menu-loading">
+                <div class="loading-spinner"></div>
+                <p>Loading our delicious menu...</p>
+            </div>
+
+            <!-- Error State -->
+            <div class="menu-error" id="menu-error" style="display: none;">
+                <i class="ph ph-warning-circle"></i>
+                <p>Unable to load menu. Please try again later.</p>
+                <button class="btn btn-primary" id="retry-btn">Retry</button>
+            </div>
+
+            <!-- Menu Container -->
+            <div class="menu-container" id="menu-container" style="display: none;">
+                <!-- Dynamically populated from JSON -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Featured Items Section -->
+    <section class="featured-items">
+        <div class="container">
+            <h2 class="section-title text-center">Customer Favorites</h2>
+            <div class="featured-grid" id="featured-grid">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Dietary Info Section -->
+    <section class="dietary-info">
+        <div class="container">
+            <div class="dietary-grid">
+                <div class="dietary-item">
+                    <i class="ph ph-leaf"></i>
+                    <span>Vegetarian</span>
+                </div>
+                <div class="dietary-item">
+                    <i class="ph ph-grains"></i>
+                    <span>Gluten-Free Options</span>
+                </div>
+                <div class="dietary-item">
+                    <i class="ph ph-milk"></i>
+                    <span>Plant-Based Milk</span>
+                </div>
+                <div class="dietary-item">
+                    <i class="ph ph-drop"></i>
+                    <span>Decaf Available</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo.webp" alt="Khatra Coffee" width="100" height="50">
+                    <p>Crafting exceptional coffee experiences since 2015.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Mon - Fri: 7:00 AM - 9:00 PM</p>
+                    <p>Sat - Sun: 8:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Khatra Coffee. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+        <a href="index.html" class="nav-item">
+            <i class="ph ph-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="menu.html" class="nav-item nav-item-main active" aria-current="page">
+            <div class="nav-item-circle">
+                <i class="ph ph-coffee"></i>
+            </div>
+            <span>Menu</span>
+        </a>
+        <a href="contact.html" class="nav-item">
+            <i class="ph ph-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize menu page
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof loadMenuData === 'function') {
+                loadMenuData();
+            }
+        });
+    </script>
+</body>
+</html>

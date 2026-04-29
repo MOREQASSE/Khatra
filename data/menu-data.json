@@ -1,0 +1,422 @@
+{
+  "categories": [
+    {
+      "id": "espresso",
+      "name": "Espresso Bar",
+      "description": "Classic Italian-style coffee preparations"
+    },
+    {
+      "id": "pour-over",
+      "name": "Pour Over",
+      "description": "Single-origin coffees brewed to order"
+    },
+    {
+      "id": "specialty",
+      "name": "Specialty Drinks",
+      "description": "House creations and seasonal favorites"
+    },
+    {
+      "id": "cold",
+      "name": "Cold Coffee",
+      "description": "Refreshing chilled options for warm days"
+    },
+    {
+      "id": "non-coffee",
+      "name": "Non-Coffee",
+      "description": "Teas, hot chocolate, and other beverages"
+    },
+    {
+      "id": "pastries",
+      "name": "Pastries & Treats",
+      "description": "Freshly baked goods to complement your drink"
+    }
+  ],
+  "items": [
+    {
+      "id": "espresso-1",
+      "name": "Classic Espresso",
+      "description": "Rich, intense shot of our signature blend with caramel notes and smooth crema",
+      "price": 3.50,
+      "category": "espresso",
+      "tags": ["Hot", "Strong"],
+      "featured": false
+    },
+    {
+      "id": "espresso-2",
+      "name": "Double Espresso",
+      "description": "Two shots for those who need an extra kick. Bold and full-bodied",
+      "price": 4.50,
+      "category": "espresso",
+      "tags": ["Hot", "Strong"],
+      "featured": false
+    },
+    {
+      "id": "espresso-3",
+      "name": "Cappuccino",
+      "description": "Equal parts espresso, steamed milk, and velvety foam. A timeless classic",
+      "price": 4.75,
+      "category": "espresso",
+      "tags": ["Hot", "Milk"],
+      "featured": true
+    },
+    {
+      "id": "espresso-4",
+      "name": "Latte",
+      "description": "Smooth espresso with steamed milk and a light layer of foam. Customizable with flavors",
+      "price": 5.00,
+      "category": "espresso",
+      "tags": ["Hot", "Milk"],
+      "featured": true
+    },
+    {
+      "id": "espresso-5",
+      "name": "Flat White",
+      "description": "Australian-style with velvety microfoam over a double shot of espresso",
+      "price": 5.25,
+      "category": "espresso",
+      "tags": ["Hot", "Milk"],
+      "featured": false
+    },
+    {
+      "id": "espresso-6",
+      "name": "Macchiato",
+      "description": "Espresso marked with a dollop of steamed milk foam. Pure and intense",
+      "price": 4.25,
+      "category": "espresso",
+      "tags": ["Hot", "Milk"],
+      "featured": false
+    },
+    {
+      "id": "espresso-7",
+      "name": "Mocha",
+      "description": "Espresso, steamed milk, and premium chocolate. Topped with whipped cream",
+      "price": 5.50,
+      "category": "espresso",
+      "tags": ["Hot", "Sweet", "Milk"],
+      "featured": false
+    },
+    {
+      "id": "espresso-8",
+      "name": "Americano",
+      "description": "Espresso diluted with hot water for a smooth, drip-coffee-like experience",
+      "price": 4.00,
+      "category": "espresso",
+      "tags": ["Hot", "Black"],
+      "featured": false
+    },
+    {
+      "id": "pourover-1",
+      "name": "Ethiopian Yirgacheffe",
+      "description": "Floral and tea-like with bright citrus notes and a clean finish. Light roast",
+      "price": 6.00,
+      "category": "pour-over",
+      "tags": ["Hot", "Single Origin"],
+      "featured": true
+    },
+    {
+      "id": "pourover-2",
+      "name": "Colombian Supremo",
+      "description": "Nutty and caramel sweetness with medium body. A crowd favorite",
+      "price": 5.75,
+      "category": "pour-over",
+      "tags": ["Hot", "Single Origin"],
+      "featured": false
+    },
+    {
+      "id": "pourover-3",
+      "name": "Guatemalan Antigua",
+      "description": "Spicy and chocolatey with subtle smoke. Complex and satisfying",
+      "price": 6.25,
+      "category": "pour-over",
+      "tags": ["Hot", "Single Origin"],
+      "featured": false
+    },
+    {
+      "id": "pourover-4",
+      "name": "Kenya AA",
+      "description": "Bold and bright with wine-like acidity and blackcurrant notes",
+      "price": 6.50,
+      "category": "pour-over",
+      "tags": ["Hot", "Single Origin"],
+      "featured": true
+    },
+    {
+      "id": "pourover-5",
+      "name": "Costa Rican Tarrazú",
+      "description": "Crisp and clean with honey sweetness and almond finish",
+      "price": 5.75,
+      "category": "pour-over",
+      "tags": ["Hot", "Single Origin"],
+      "featured": false
+    },
+    {
+      "id": "pourover-6",
+      "name": "Sumatra Mandheling",
+      "description": "Earthy and full-bodied with herbal notes and low acidity. Dark roast",
+      "price": 6.00,
+      "category": "pour-over",
+      "tags": ["Hot", "Single Origin"],
+      "featured": false
+    },
+    {
+      "id": "specialty-1",
+      "name": "Khatra Signature",
+      "description": "Our secret blend with cinnamon, cardamom, and a touch of honey. House favorite",
+      "price": 6.50,
+      "category": "specialty",
+      "tags": ["Hot", "Signature"],
+      "featured": true
+    },
+    {
+      "id": "specialty-2",
+      "name": "Golden Turmeric Latte",
+      "description": "Espresso with turmeric, ginger, black pepper, and steamed oat milk. Anti-inflammatory",
+      "price": 6.25,
+      "category": "specialty",
+      "tags": ["Hot", "Healthy", "Vegan"],
+      "featured": false
+    },
+    {
+      "id": "specialty-3",
+      "name": "Lavender Honey Latte",
+      "description": "Floral and soothing with local wildflower honey. A spring sensation",
+      "price": 6.00,
+      "category": "specialty",
+      "tags": ["Hot", "Sweet", "Seasonal"],
+      "featured": true
+    },
+    {
+      "id": "specialty-4",
+      "name": "Maple Pecan Latte",
+      "description": "Real maple syrup and toasted pecan flavors. Autumn comfort in a cup",
+      "price": 6.25,
+      "category": "specialty",
+      "tags": ["Hot", "Sweet", "Seasonal"],
+      "featured": false
+    },
+    {
+      "id": "specialty-5",
+      "name": "Coconut Cream Cold Brew",
+      "description": "Smooth cold brew with coconut cream and a hint of vanilla. Dairy-free delight",
+      "price": 5.75,
+      "category": "specialty",
+      "tags": ["Cold", "Vegan"],
+      "featured": false
+    },
+    {
+      "id": "specialty-6",
+      "name": "Espresso Tonic",
+      "description": "Double shot of espresso over premium tonic water with ice and lemon twist",
+      "price": 5.50,
+      "category": "specialty",
+      "tags": ["Cold", "Refreshing"],
+      "featured": false
+    },
+    {
+      "id": "cold-1",
+      "name": "Classic Cold Brew",
+      "description": "Steeped for 18 hours for smooth, low-acidity coffee. Strong and refreshing",
+      "price": 4.75,
+      "category": "cold",
+      "tags": ["Cold", "Strong"],
+      "featured": true
+    },
+    {
+      "id": "cold-2",
+      "name": "Nitro Cold Brew",
+      "description": "Infused with nitrogen for a creamy, stout-like texture. Served on tap",
+      "price": 5.50,
+      "category": "cold",
+      "tags": ["Cold", "Creamy"],
+      "featured": true
+    },
+    {
+      "id": "cold-3",
+      "name": "Iced Latte",
+      "description": "Espresso and cold milk over ice. Simple and satisfying",
+      "price": 5.25,
+      "category": "cold",
+      "tags": ["Cold", "Milk"],
+      "featured": false
+    },
+    {
+      "id": "cold-4",
+      "name": "Iced Americano",
+      "description": "Espresso and cold water over ice. Clean and crisp",
+      "price": 4.50,
+      "category": "cold",
+      "tags": ["Cold", "Black"],
+      "featured": false
+    },
+    {
+      "id": "cold-5",
+      "name": "Vietnamese Iced Coffee",
+      "description": "Strong drip coffee with sweetened condensed milk over ice. Rich and indulgent",
+      "price": 5.75,
+      "category": "cold",
+      "tags": ["Cold", "Sweet"],
+      "featured": false
+    },
+    {
+      "id": "cold-6",
+      "name": "Iced Matcha Coffee",
+      "description": "Premium matcha layered with cold brew and milk. Best of both worlds",
+      "price": 6.00,
+      "category": "cold",
+      "tags": ["Cold", "Green Tea"],
+      "featured": false
+    },
+    {
+      "id": "noncoffee-1",
+      "name": "Masala Chai",
+      "description": "House-made blend of black tea and aromatic spices with steamed milk",
+      "price": 5.00,
+      "category": "non-coffee",
+      "tags": ["Hot", "Spicy"],
+      "featured": false
+    },
+    {
+      "id": "noncoffee-2",
+      "name": "Matcha Latte",
+      "description": "Ceremonial grade matcha from Uji, Japan. Whisked to order",
+      "price": 5.75,
+      "category": "non-coffee",
+      "tags": ["Hot", "Green Tea"],
+      "featured": true
+    },
+    {
+      "id": "noncoffee-3",
+      "name": "Hot Chocolate",
+      "description": "Rich Belgian chocolate with steamed milk and whipped cream. Decadent",
+      "price": 5.25,
+      "category": "non-coffee",
+      "tags": ["Hot", "Sweet"],
+      "featured": false
+    },
+    {
+      "id": "noncoffee-4",
+      "name": "Golden Milk",
+      "description": "Turmeric, ginger, and spices in warm oat milk. Caffeine-free comfort",
+      "price": 5.50,
+      "category": "non-coffee",
+      "tags": ["Hot", "Healthy", "Vegan"],
+      "featured": false
+    },
+    {
+      "id": "noncoffee-5",
+      "name": "Earl Grey Cream",
+      "description": "Premium bergamot tea with a splash of vanilla cream. Sophisticated",
+      "price": 4.50,
+      "category": "non-coffee",
+      "tags": ["Hot", "Black Tea"],
+      "featured": false
+    },
+    {
+      "id": "noncoffee-6",
+      "name": "Fresh Mint Tea",
+      "description": "Garden-fresh mint steeped in hot water. Naturally caffeine-free",
+      "price": 4.00,
+      "category": "non-coffee",
+      "tags": ["Hot", "Herbal"],
+      "featured": false
+    },
+    {
+      "id": "noncoffee-7",
+      "name": "Iced Tea",
+      "description": "Daily selection of brewed iced tea. Ask for today's flavor",
+      "price": 3.75,
+      "category": "non-coffee",
+      "tags": ["Cold", "Refreshing"],
+      "featured": false
+    },
+    {
+      "id": "pastry-1",
+      "name": "Almond Croissant",
+      "description": "Buttery, flaky layers with sweet almond cream filling. Baked fresh daily",
+      "price": 4.50,
+      "category": "pastries",
+      "tags": ["Sweet", "Vegetarian"],
+      "featured": true
+    },
+    {
+      "id": "pastry-2",
+      "name": "Chocolate Muffin",
+      "description": "Double chocolate with chunks of Belgian chocolate. Rich and moist",
+      "price": 3.75,
+      "category": "pastries",
+      "tags": ["Sweet", "Vegetarian"],
+      "featured": false
+    },
+    {
+      "id": "pastry-3",
+      "name": "Cinnamon Roll",
+      "description": "Warm, gooey, and generously iced. Made with Ceylon cinnamon",
+      "price": 4.75,
+      "category": "pastries",
+      "tags": ["Sweet", "Vegetarian"],
+      "featured": true
+    },
+    {
+      "id": "pastry-4",
+      "name": "Avocado Toast",
+      "description": "Sourdough bread with smashed avocado, chili flakes, and lemon. Add poached egg +$2",
+      "price": 8.50,
+      "category": "pastries",
+      "tags": ["Savory", "Vegan"],
+      "featured": false
+    },
+    {
+      "id": "pastry-5",
+      "name": "Bagel with Cream Cheese",
+      "description": "Hand-rolled bagel with house-made herb cream cheese. Classic New York style",
+      "price": 5.50,
+      "category": "pastries",
+      "tags": ["Savory", "Vegetarian"],
+      "featured": false
+    },
+    {
+      "id": "pastry-6",
+      "name": "Blueberry Scone",
+      "description": "Tender and buttery with bursts of fresh blueberries. Perfect with coffee",
+      "price": 3.50,
+      "category": "pastries",
+      "tags": ["Sweet", "Vegetarian"],
+      "featured": false
+    },
+    {
+      "id": "pastry-7",
+      "name": "Quiche Lorraine",
+      "description": "Bacon, Gruyère, and caramelized onions in flaky pastry. Savory breakfast",
+      "price": 7.50,
+      "category": "pastries",
+      "tags": ["Savory", "Hearty"],
+      "featured": false
+    },
+    {
+      "id": "pastry-8",
+      "name": "Banana Bread",
+      "description": "Moist and nutty with walnuts and dark chocolate chips. Homemade recipe",
+      "price": 4.00,
+      "category": "pastries",
+      "tags": ["Sweet", "Vegetarian"],
+      "featured": false
+    }
+  ],
+  "featured": [
+    {
+      "name": "Cappuccino",
+      "price": 4.75,
+      "image": "images/gallerie/gallery0.webp"
+    },
+    {
+      "name": "Latte",
+      "price": 5.00,
+      "image": "images/gallerie/gallery1.webp"
+    },
+    {
+      "name": "Ethiopian Yirgacheffe",
+      "price": 6.00,
+      "image": "images/gallerie/gallery2.webp"
+    }
+  ]
+}

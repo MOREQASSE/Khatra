@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Khatra Coffee Shop - Artisan coffee in a warm, inviting atmosphere">
+    <title>Khatra Coffee | Home</title>
+    
+    <!-- Phosphor Icons CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.webp" alt="Khatra Coffee" width="120" height="60">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Model -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Experience the Art of Coffee</h1>
+                <p class="hero-subtitle">Where every cup tells a story. Discover our handcrafted blends and artisanal brewing methods.</p>
+                <div class="hero-cta">
+                    <a href="menu.html" class="btn btn-primary">View Menu</a>
+                    <a href="contact.html" class="btn btn-secondary">Find Us</a>
+                </div>
+            </div>
+            <div class="hero-3d-container" id="hero-3d">
+                <canvas id="three-canvas"></canvas>
+                <div class="loading-overlay" id="loading-overlay">
+                    <div class="loading-spinner"></div>
+                    <p>Loading 3D Experience...</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="ph ph-caret-down"></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Our Story</h2>
+                    <p>Founded in 2015, Khatra Coffee began with a simple mission: to bring exceptional coffee experiences to our community. We source our beans from sustainable farms across Ethiopia, Colombia, and Guatemala, ensuring every sip supports both quality and ethical practices.</p>
+                    <p>Our master roasters bring decades of expertise, carefully crafting each batch to highlight the unique characteristics of every origin. From light, floral Ethiopian Yirgacheffe to bold, chocolatey Colombian Supremo, our diverse selection caters to every palate.</p>
+                    <a href="menu.html" class="btn btn-outline">Explore Our Coffee</a>
+                </div>
+                <div class="about-image">
+                    <img src="images/gallerie/gallery0.webp" alt="Coffee brewing at Khatra" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title text-center">Why Choose Khatra</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ph ph-coffee"></i>
+                    </div>
+                    <h3>Artisan Roasts</h3>
+                    <p>Small-batch roasting ensures peak freshness and flavor in every cup we serve.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ph ph-plant"></i>
+                    </div>
+                    <h3>Sustainable Sourcing</h3>
+                    <p>Direct trade relationships with farmers ensure fair wages and eco-friendly practices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ph ph-users"></i>
+                    </div>
+                    <h3>Community Hub</h3>
+                    <p>A welcoming space where coffee lovers gather, work, and connect.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview Section -->
+    <section class="gallery-preview" id="gallery">
+        <div class="container">
+            <h2 class="section-title text-center">Our Space</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallerie/gallery1.webp" alt="Cozy interior seating" loading="lazy">
+                </div>
+                <div class="gallery-item featured">
+                    <img src="images/gallerie/gallery2.webp" alt="Coffee bar and brewing station" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallerie/gallery3.webp" alt="Latte art close-up" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Taste the Difference?</h2>
+                <p>Visit us today and discover your new favorite coffee.</p>
+                <a href="contact.html" class="btn btn-primary btn-large">Visit Khatra</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo.webp" alt="Khatra Coffee" width="100" height="50">
+                    <p>Crafting exceptional coffee experiences since 2015.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Mon - Fri: 7:00 AM - 9:00 PM</p>
+                    <p>Sat - Sun: 8:00 AM - 10:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Khatra Coffee. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+        <a href="index.html" class="nav-item active" aria-current="page">
+            <i class="ph ph-house"></i>
+            <span>Home</span>
+        </a>
+        <a href="menu.html" class="nav-item nav-item-main">
+            <div class="nav-item-circle">
+                <i class="ph ph-coffee"></i>
+            </div>
+            <span>Menu</span>
+        </a>
+        <a href="contact.html" class="nav-item">
+            <i class="ph ph-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
