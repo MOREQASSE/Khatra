@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Khatra Coffee Shop - Artisan coffee in a warm, inviting atmosphere">
-    <title>Khatra Coffee | Home</title>
-    
+    <meta name="description" content="Khatra Coffee - Café artisanal à Tanger depuis 2015. Torréfaction maison, café d'exception, ambiance chaleureuse. Découvrez notre menu et rejoignez notre programme fidélité.">
+    <title>Khatra Coffee | Café Artisanal à Tanger depuis 2015</title>
+
     <!-- Phosphor Icons CSS -->
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    
+
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <!-- Desktop Navigation -->
     <nav class="desktop-nav" aria-label="Main navigation">
@@ -43,11 +47,35 @@
     <section class="hero" id="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">Experience the Art of Coffee</h1>
-                <p class="hero-subtitle">Where every cup tells a story. Discover our handcrafted blends and artisanal brewing methods.</p>
+                <div class="hero-badge">
+                    <i class="ph ph-star-fill"></i>
+                    <span>Café préféré à Tanger</span>
+                </div>
+                <h1 class="hero-title">L'Art du Café, Authentique & Local</h1>
+                <p class="hero-subtitle">Découvrez l'essence du café marocain revisité. Torréfaction artisanale, grains soigneusement sélectionnés, et une ambiance chaleureuse qui vous attend à chaque visite.</p>
                 <div class="hero-cta">
-                    <a href="menu.html" class="btn btn-primary">View Menu</a>
-                    <a href="contact.html" class="btn btn-secondary">Find Us</a>
+                    <a href="menu.html" class="btn btn-primary">
+                        <i class="ph ph-coffee"></i>
+                        Découvrir le Menu
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="ph ph-map-pin"></i>
+                        Nous Trouver
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">8+</span>
+                        <span class="stat-label">Années d'excellence</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Clients satisfaits</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">4.9</span>
+                        <span class="stat-label">Note moyenne</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-3d-container" id="hero-3d">
@@ -75,14 +103,102 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="section-title">Our Story</h2>
-                    <p>Founded in 2015, Khatra Coffee began with a simple mission: to bring exceptional coffee experiences to our community. We source our beans from sustainable farms across Ethiopia, Colombia, and Guatemala, ensuring every sip supports both quality and ethical practices.</p>
-                    <p>Our master roasters bring decades of expertise, carefully crafting each batch to highlight the unique characteristics of every origin. From light, floral Ethiopian Yirgacheffe to bold, chocolatey Colombian Supremo, our diverse selection caters to every palate.</p>
-                    <a href="menu.html" class="btn btn-outline">Explore Our Coffee</a>
+                    <span class="section-label">Notre Histoire</span>
+                    <h2 class="section-title">De la Passion à Votre Tasse</h2>
+                    <p>Né en 2015 au cœur de Tanger, <strong>Khatra Coffee</strong> est né d'une passion simple : partager l'art du café authentique avec notre communauté. Notre nom "Khatra" (خطرة) évoque ce moment précieux où le temps s'arrête pour savourer l'instant présent.</p>
+                    <p>Nous sélectionnons nos grains avec soin auprès des meilleures plantations d'Éthiopie, de Colombie et du Guatemala, en privilégiant le commerce équitable et les pratiques durables. Chaque tasse que vous dégustez soutient directement des fermiers passionnés.</p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <i class="ph ph-check-circle"></i>
+                            <span>Grains 100% Arabica</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="ph ph-check-circle"></i>
+                            <span>Torréfaction sur place</span>
+                        </div>
+                        <div class="value-item">
+                            <i class="ph ph-check-circle"></i>
+                            <span>Commerce équitable</span>
+                        </div>
+                    </div>
+                    <a href="menu.html" class="btn btn-outline">
+                        <i class="ph ph-arrow-right"></i>
+                        Explorer Notre Café
+                    </a>
                 </div>
                 <div class="about-image">
-                    <img src="images/gallerie/gallery0.webp" alt="Coffee brewing at Khatra" loading="lazy">
+                    <img src="images/gallerie/gallery0.webp" alt="Torréfaction artisanale chez Khatra" loading="lazy">
+                    <div class="about-float-card">
+                        <i class="ph ph-trophy"></i>
+                        <div>
+                            <strong>Meilleur Café</strong>
+                            <span>Tanger 2023</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Drinks Section -->
+    <section class="signature-drinks" id="signature">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nos Spécialités</span>
+                <h2 class="section-title text-center">Les Favoris de Nos Clients</h2>
+                <p class="section-subtitle">Découvrez les créations qui ont conquis le cœur de Tanger</p>
+            </div>
+            <div class="drinks-grid">
+                <div class="drink-card">
+                    <div class="drink-image">
+                        <img src="images/menu.jpg" alt="Khatra Spécial" loading="lazy">
+                        <span class="drink-badge">Best-seller</span>
+                    </div>
+                    <div class="drink-info">
+                        <h3>Khatra Spécial</h3>
+                        <p>Espresso corsé avec une touche de cardamome, notre signature inimitable</p>
+                        <span class="drink-price">25 DH</span>
+                    </div>
+                </div>
+                <div class="drink-card featured">
+                    <div class="drink-image">
+                        <img src="images/menu.jpg" alt="Café Glacé Menthe" loading="lazy">
+                        <span class="drink-badge"> Frais</span>
+                    </div>
+                    <div class="drink-info">
+                        <h3>Café Glacé Menthe</h3>
+                        <p>Cold brew infusé à la menthe fraîche, rafraîchissant et revigorant</p>
+                        <span class="drink-price">28 DH</span>
+                    </div>
+                </div>
+                <div class="drink-card">
+                    <div class="drink-image">
+                        <img src="images/menu.jpg" alt="Latte Art" loading="lazy">
+                        <span class="drink-badge">Instagram</span>
+                    </div>
+                    <div class="drink-info">
+                        <h3>Latte Artistique</h3>
+                        <p>Crème veloutée avec un dessin unique fait main par nos baristas</p>
+                        <span class="drink-price">30 DH</span>
+                    </div>
+                </div>
+                <div class="drink-card">
+                    <div class="drink-image">
+                        <img src="images/menu.jpg" alt="Thé à la Bergamote" loading="lazy">
+                        <span class="drink-badge">Nouveau</span>
+                    </div>
+                    <div class="drink-info">
+                        <h3>Thé Royal Bergamote</h3>
+                        <p>Thé vert marocain rehaussé d'huile essentielle de bergamote biologique</p>
+                        <span class="drink-price">22 DH</span>
+                    </div>
+                </div>
+            </div>
+            <div class="drinks-cta">
+                <a href="menu.html" class="btn btn-primary btn-large">
+                    <i class="ph ph-book-open"></i>
+                    Voir Tout le Menu
+                </a>
             </div>
         </div>
     </section>
@@ -90,28 +206,123 @@
     <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title text-center">Why Choose Khatra</h2>
+            <div class="section-header">
+                <span class="section-label">Pourquoi Nous</span>
+                <h2 class="section-title text-center">L'Expérience Khatra</h2>
+                <p class="section-subtitle">Ce qui nous différencie et fait notre fierté depuis 2015</p>
+            </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="ph ph-coffee"></i>
                     </div>
-                    <h3>Artisan Roasts</h3>
-                    <p>Small-batch roasting ensures peak freshness and flavor in every cup we serve.</p>
+                    <h3>Torréfaction Artisanale</h3>
+                    <p>Nos maîtres torréfacteurs surveillent chaque lot minute par minute pour révéler les arômes uniques de chaque origine.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="ph ph-plant"></i>
                     </div>
-                    <h3>Sustainable Sourcing</h3>
-                    <p>Direct trade relationships with farmers ensure fair wages and eco-friendly practices.</p>
+                    <h3>Commerce Équitable</h3>
+                    <p>Relations directes avec des fermiers passionnés en Éthiopie et Colombie. Prix justes garantis pour chaque producteur.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ph ph-heart"></i>
+                    </div>
+                    <h3>Baristas Passionnés</h3>
+                    <p>Formés aux techniques internationales, nos baristas transforment chaque commande en œuvre d'art.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ph ph-wifi-high"></i>
+                    </div>
+                    <h3>Espace Connecté</h3>
+                    <p>Wi-Fi fibre optique ultra-rapide, prises USB à chaque table, ambiance studieuse sans sacrifier le confort.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="ph ph-moon-stars"></i>
+                    </div>
+                    <h3>Ambiance Unique</h3>
+                    <p>Décor inspiré du patrimoine marocain avec une touche contemporaine. Musique live les week-ends.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="ph ph-users"></i>
                     </div>
-                    <h3>Community Hub</h3>
-                    <p>A welcoming space where coffee lovers gather, work, and connect.</p>
+                    <h3>Communauté Vivante</h3>
+                    <p>Rencontres littéraires, expositions locales, espaces de coworking. Khatra est plus qu'un café, c'est un lieu de vie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Témoignages</span>
+                <h2 class="section-title text-center">Ils Parlent de Nous</h2>
+                <p class="section-subtitle">Ce que nos clients disent sur leur expérience Khatra</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">"Le meilleur café de Tanger, sans hésitation. L'ambiance est unique, les baristas connaissent vraiment leur métier. Mon rendez-vous quotidien !"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="ph ph-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <strong>Amina L.</strong>
+                            <span>Cliente fidèle depuis 2020</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card featured">
+                    <div class="testimonial-rating">
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">"Enfin un café qui comprend le remote work ! WiFi ultra-rapide, prises partout, et un café qui reste chaud des heures. Je viens ici tous les jours pour travailler."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="ph ph-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <strong>Youssef M.</strong>
+                            <span>Développeur Freelance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                        <i class="ph ph-star-fill"></i>
+                    </div>
+                    <p class="testimonial-text">"Le Khatra Spécial est une révélation ! Ce mélange de cardamome et d'espresso est unique. La carte fidélité est un plus génial aussi."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="ph ph-user-circle"></i>
+                        </div>
+                        <div class="author-info">
+                            <strong>Sofia B.</strong>
+                            <span>Food Blogger</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,7 +331,11 @@
     <!-- Gallery Preview Section -->
     <section class="gallery-preview" id="gallery">
         <div class="container">
-            <h2 class="section-title text-center">Our Space</h2>
+            <div class="section-header">
+                <span class="section-label">Galerie</span>
+                <h2 class="section-title text-center">Notre Univers</h2>
+                <p class="section-subtitle">Un aperçu de l'atmosphère chaleureuse qui vous attend</p>
+            </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="images/gallerie/gallery1.webp" alt="Cozy interior seating" loading="lazy">
@@ -135,13 +350,77 @@
         </div>
     </section>
 
+    <!-- Loyalty Card Teaser Section -->
+    <section class="loyalty-teaser" id="loyalty">
+        <div class="container">
+            <div class="loyalty-content">
+                <div class="loyalty-visual">
+                    <div class="loyalty-card-visual">
+                        <i class="ph ph-crown"></i>
+                        <span>Carte Khatra</span>
+                    </div>
+                </div>
+                <div class="loyalty-text">
+                    <span class="section-label">Fidélité Récompensée</span>
+                    <h2>Rejoignez Notre Programme VIP</h2>
+                    <p>Gagnez des points à chaque visite et débloquez des récompenses exclusives : boissons gratuites, promotions spéciales, et accès anticipé aux nouveautés.</p>
+                    <div class="loyalty-benefits">
+                        <div class="benefit-item">
+                            <i class="ph ph-gift"></i>
+                            <span>1 boisson offerte tous les 10 achats</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="ph ph-percent"></i>
+                            <span>-15% sur votre anniversaire</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="ph ph-sparkle"></i>
+                            <span>Accès aux nouveautés en avant-première</span>
+                        </div>
+                    </div>
+                    <a href="loyalty.html" class="btn btn-primary btn-large">
+                        <i class="ph ph-crown"></i>
+                        Devenir Membre VIP
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Taste the Difference?</h2>
-                <p>Visit us today and discover your new favorite coffee.</p>
-                <a href="contact.html" class="btn btn-primary btn-large">Visit Khatra</a>
+                <div class="cta-badge">
+                    <i class="ph ph-clock"></i>
+                    <span>Ouvert Aujourd'hui : 7h00 - 22h00</span>
+                </div>
+                <h2>Prêt à Découvrir l'Expérience Khatra ?</h2>
+                <p>Que ce soit pour une pause rapide, une journée de travail, ou un moment entre amis, nous vous attendons avec le sourire et un café parfait.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">
+                        <i class="ph ph-map-pin"></i>
+                        Nous Trouver
+                    </a>
+                    <a href="menu.html" class="btn btn-secondary btn-large">
+                        <i class="ph ph-coffee"></i>
+                        Voir le Menu
+                    </a>
+                </div>
+                <div class="cta-info">
+                    <div class="info-item">
+                        <i class="ph ph-phone"></i>
+                        <span>+212 5XX-XXXXXX</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="ph ph-envelope"></i>
+                        <span>hello@khatracoffee.ma</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="ph ph-instagram-logo"></i>
+                        <span>@khatracoffee</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -159,6 +438,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="menu.html">Menu</a></li>
+                        <li><a href="loyalty.html">Fidélité</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -192,6 +472,90 @@
         </a>
     </nav>
 
+    <!-- Rate Us Component -->
+    <div class="rate-us-container" id="rateUsContainer">
+        <div class="rate-us-panel" id="rateUsPanel">
+            <div class="rate-us-stars">
+                <i class="ph ph-star"></i>
+                <i class="ph ph-star"></i>
+                <i class="ph ph-star"></i>
+                <i class="ph ph-star"></i>
+                <i class="ph ph-star"></i>
+            </div>
+            <p class="rate-us-text">Évaluez-nous sur Google Maps</p>
+            <span class="rate-us-hint">Cliquez pour ouvrir</span>
+        </div>
+        <button class="rate-us-btn" id="rateUsBtn" aria-label="Évaluez-nous">
+            <i class="ph ph-star"></i>
+            <span class="rate-us-btn-text">Rate</span>
+        </button>
+    </div>
+
     <script src="js/main.js"></script>
+    <script>
+    // Rate Us Component - Reusable Template
+    (function() {
+        const container = document.getElementById('rateUsContainer');
+        const btn = document.getElementById('rateUsBtn');
+        const panel = document.getElementById('rateUsPanel');
+
+        // Configuration - Change these for your business
+        const CONFIG = {
+            placeId: 'ChIJ17YjlA8nrA0R1vgLqR_Qn9A', // Your Google Maps Place ID
+            language: 'fr',
+            country: 'MA'
+        };
+
+        let isExpanded = false;
+
+        function expandPanel() {
+            container.classList.add('expanded');
+            isExpanded = true;
+
+            // Animate stars
+            const stars = panel.querySelectorAll('.rate-us-stars i');
+            stars.forEach((star, index) => {
+                setTimeout(() => {
+                    star.classList.add('filled');
+                }, index * 100);
+            });
+        }
+
+        function redirectToReview() {
+            const reviewUrl = `https://search.google.com/local/writereview?placeid=${CONFIG.placeId}&hl=${CONFIG.language}&gl=${CONFIG.country}`;
+            window.open(reviewUrl, '_blank');
+        }
+
+        // Button click - expand first, then redirect on second click
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (!isExpanded) {
+                expandPanel();
+            } else {
+                redirectToReview();
+            }
+        });
+
+        // Panel click - redirect when already expanded
+        panel.addEventListener('click', function(e) {
+            if (isExpanded) {
+                redirectToReview();
+            }
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!container.contains(e.target) && isExpanded) {
+                container.classList.remove('expanded');
+                isExpanded = false;
+
+                // Reset stars
+                const stars = panel.querySelectorAll('.rate-us-stars i');
+                stars.forEach(star => star.classList.remove('filled'));
+            }
+        });
+    })();
+    </script>
 </body>
+
 </html>

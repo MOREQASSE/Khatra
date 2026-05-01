@@ -483,6 +483,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="menu.html">Menu</a></li>
+                        <li><a href="loyalty.html">Fidélité</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -554,6 +555,90 @@
                 });
             });
         });
+    </script>
+
+    <!-- Rate Us Component -->
+    <div class="rate-us-container" id="rateUsContainer">
+        <div class="rate-us-panel" id="rateUsPanel">
+            <div class="rate-us-stars">
+                <i class="ph ph-star"></i>
+                <i class="ph ph-star"></i>
+                <i class="ph ph-star"></i>
+                <i class="ph ph-star"></i>
+                <i class="ph ph-star"></i>
+            </div>
+            <p class="rate-us-text">Évaluez-nous sur Google Maps</p>
+            <span class="rate-us-hint">Cliquez pour ouvrir</span>
+        </div>
+        <button class="rate-us-btn" id="rateUsBtn" aria-label="Évaluez-nous">
+            <i class="ph ph-star"></i>
+            <span class="rate-us-btn-text">Rate</span>
+        </button>
+    </div>
+
+    <script>
+    // Rate Us Component - Reusable Template
+    (function() {
+        const container = document.getElementById('rateUsContainer');
+        const btn = document.getElementById('rateUsBtn');
+        const panel = document.getElementById('rateUsPanel');
+
+        // Configuration - Change these for your business
+        const CONFIG = {
+            placeId: 'ChIJ17YjlA8nrA0R1vgLqR_Qn9A', // Your Google Maps Place ID
+            language: 'fr',
+            country: 'MA'
+        };
+
+        let isExpanded = false;
+
+        function expandPanel() {
+            container.classList.add('expanded');
+            isExpanded = true;
+
+            // Animate stars
+            const stars = panel.querySelectorAll('.rate-us-stars i');
+            stars.forEach((star, index) => {
+                setTimeout(() => {
+                    star.classList.add('filled');
+                }, index * 100);
+            });
+        }
+
+        function redirectToReview() {
+            const reviewUrl = `https://search.google.com/local/writereview?placeid=${CONFIG.placeId}&hl=${CONFIG.language}&gl=${CONFIG.country}`;
+            window.open(reviewUrl, '_blank');
+        }
+
+        // Button click - expand first, then redirect on second click
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (!isExpanded) {
+                expandPanel();
+            } else {
+                redirectToReview();
+            }
+        });
+
+        // Panel click - redirect when already expanded
+        panel.addEventListener('click', function(e) {
+            if (isExpanded) {
+                redirectToReview();
+            }
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!container.contains(e.target) && isExpanded) {
+                container.classList.remove('expanded');
+                isExpanded = false;
+
+                // Reset stars
+                const stars = panel.querySelectorAll('.rate-us-stars i');
+                stars.forEach(star => star.classList.remove('filled'));
+            }
+        });
+    })();
     </script>
 </body>
 </html>

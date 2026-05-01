@@ -47,11 +47,11 @@ function initializeApp() {
     setTimeout(() => {
         initThreeJS();
     }, 100);
-    
+
     initGSAPAnimations();
     initNavigation();
     initContactForm();
-    
+
     // Initialize menu if on menu page
     if (document.getElementById('menu-container')) {
         loadMenuData();
@@ -72,17 +72,17 @@ function initThreeJS() {
     try {
         // Scene setup
         scene = new THREE.Scene();
-        
+
         // Camera setup
         const aspect = container.clientWidth / container.clientHeight;
         camera = new THREE.PerspectiveCamera(45, aspect, 0.1, 100);
         camera.position.set(0, 1, 5);
 
         // Renderer setup
-        renderer = new THREE.WebGLRenderer({ 
-            canvas: canvas, 
-            antialias: true, 
-            alpha: true 
+        renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            antialias: true,
+            alpha: true
         });
         renderer.setSize(container.clientWidth, container.clientHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -118,7 +118,7 @@ function initThreeJS() {
         if (isLocalFile) {
             console.warn('Running from local file. GLTF loading may fail due to browser CORS policy.');
             console.warn('Please use a local server: python -m http.server 8000');
-            
+
             // Show warning in loading overlay
             if (loadingOverlay) {
                 const loadingText = loadingOverlay.querySelector('p');
@@ -128,10 +128,10 @@ function initThreeJS() {
                     loadingText.style.fontSize = '0.85rem';
                 }
             }
-            
+
             // Still try to load, but will likely fail
         }
-        
+
         // Load GLTF Model
         if (typeof THREE.GLTFLoader === 'undefined') {
             console.warn('GLTFLoader not available, using fallback model');
@@ -141,53 +141,53 @@ function initThreeJS() {
             }
             return;
         }
-        
+
         const loader = new THREE.GLTFLoader();
-        
+
         // Use correct path
         const modelPath = 'scene.glb';
-        
+
         console.log('Loading GLTF from:', modelPath, 'Protocol:', window.location.protocol);
-        
+
         loader.load(
             modelPath,
             (gltf) => {
                 coffeeModel = gltf.scene;
-                
+
                 // Center and scale the model
                 const box = new THREE.Box3().setFromObject(coffeeModel);
                 const center = box.getCenter(new THREE.Vector3());
                 const size = box.getSize(new THREE.Vector3());
-                
+
                 const maxDim = Math.max(size.x, size.y, size.z);
-                
+
                 // Detect mobile for responsive sizing
                 const isMobile = window.innerWidth <= 768;
-                
+
                 // Use CONFIG.size for scale - adjust in global CONFIG above
                 const baseScale = isMobile ? CONFIG.size.mobile : CONFIG.size.desktop;
                 const scale = baseScale / maxDim;
-                
+
                 coffeeModel.userData.originalScale = scale;
                 coffeeModel.userData.isMobile = isMobile;
                 coffeeModel.scale.setScalar(scale);
-                
+
                 // Use CONFIG.height for vertical position
                 const yPosition = isMobile ? CONFIG.height.mobile : CONFIG.height.desktop;
                 coffeeModel.position.set(0, yPosition, 0);
-                
+
                 // Use CONFIG.camera for camera distance and position
                 if (camera) {
                     camera.position.z = isMobile ? CONFIG.camera.mobile : CONFIG.camera.desktop;
                     camera.position.y = isMobile ? CONFIG.cameraY.mobile : CONFIG.cameraY.desktop;
                 }
-                
+
                 // Enable shadows
                 coffeeModel.traverse((child) => {
                     if (child.isMesh) {
                         child.castShadow = true;
                         child.receiveShadow = true;
-                        
+
                         // Enhance materials
                         if (child.material) {
                             child.material.roughness = Math.max(0.3, child.material.roughness);
@@ -235,7 +235,7 @@ function initThreeJS() {
                 console.error('GLTF Load Error:', error);
                 console.error('Error type:', error.type || 'unknown');
                 console.error('Error message:', error.message || error);
-                
+
                 // Show error in loading overlay briefly before fallback
                 if (loadingOverlay) {
                     const loadingText = loadingOverlay.querySelector('p');
@@ -243,7 +243,7 @@ function initThreeJS() {
                         loadingText.textContent = 'Could not load 3D model. Using fallback...';
                         loadingText.style.color = '#f87171';
                     }
-                    
+
                     setTimeout(() => {
                         createFallbackModel();
                         loadingOverlay.style.display = 'none';
@@ -321,17 +321,17 @@ function createFallbackModel() {
     group.add(saucer);
 
     coffeeModel = group;
-    
+
     // Use CONFIG for fallback model sizing
     const isMobile = window.innerWidth <= 768;
     const scale = isMobile ? CONFIG.size.mobile : CONFIG.size.desktop;
     const yPosition = isMobile ? CONFIG.height.mobile : CONFIG.height.desktop;
-    
+
     coffeeModel.scale.setScalar(scale);
     coffeeModel.userData.originalScale = scale;
     coffeeModel.userData.isMobile = isMobile;
     coffeeModel.position.set(0, yPosition, 0);
-    
+
     scene.add(coffeeModel);
 
     // Use CONFIG for camera position
@@ -356,11 +356,11 @@ function initScrollRotation() {
     }
 
     const isMobile = window.innerWidth <= 768;
-    
+
     // Get original scale and position from CONFIG
     const originalScale = coffeeModel.userData.originalScale || (isMobile ? CONFIG.size.mobile : CONFIG.size.desktop);
     const baseYPosition = isMobile ? CONFIG.height.mobile : CONFIG.height.desktop;
-    
+
     // Set initial state - use CONFIG values
     coffeeModel.position.set(0, baseYPosition, 0);
     coffeeModel.rotation.set(0, 0, 0);
@@ -386,21 +386,21 @@ function initScrollRotation() {
             onUpdate: (self) => {
                 if (!coffeeModel) return;
                 const progress = self.progress;
-                
+
                 // S-curve X motion: starts center, curves right, then left
                 // Using sine wave with phase shift for smooth S-curve
                 const xOffset = Math.sin(progress * Math.PI * 2) * 1.2;
-                
+
                 // Y motion: overall downward drift with wave
                 const yOffset = baseYPosition - (progress * 1.5) + (Math.sin(progress * Math.PI * 4) * 0.2);
-                
+
                 // Z motion: subtle depth change
                 const zOffset = Math.cos(progress * Math.PI * 2) * 0.5;
-                
+
                 coffeeModel.position.x = xOffset;
                 coffeeModel.position.y = yOffset;
                 coffeeModel.position.z = zOffset;
-                
+
                 // Rotation: spin + tilt following the curve
                 coffeeModel.rotation.y = progress * Math.PI * 3;
                 coffeeModel.rotation.z = -xOffset * 0.3; // Bank into the turn
@@ -413,12 +413,12 @@ function initScrollRotation() {
             y: baseYPosition - 0.5,
             ease: 'none'
         }, 0);
-        
+
         scrollTriggerInstance.to(coffeeModel.rotation, {
             y: Math.PI * 2,
             ease: 'none'
         }, 0);
-        
+
         scrollTriggerInstance.to(coffeeModel.rotation, {
             x: -0.2,
             ease: 'none'
@@ -453,7 +453,7 @@ function animate() {
     if (coffeeModel && !ScrollTrigger.isScrolling()) {
         const heroTrigger = ScrollTrigger.getById && ScrollTrigger.getAll().find(st => st.vars.trigger === '#hero');
         const isInHero = heroTrigger ? heroTrigger.isActive : true;
-        
+
         if (isInHero) {
             // Very subtle idle bobbing
             coffeeModel.position.y += Math.sin(Date.now() * 0.001) * 0.0005;
@@ -479,11 +479,11 @@ function onWindowResize() {
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
-    
+
     // Use CONFIG for camera position on resize
     camera.position.z = isMobile ? CONFIG.camera.mobile : CONFIG.camera.desktop;
     camera.position.y = isMobile ? CONFIG.cameraY.mobile : CONFIG.cameraY.desktop;
-    
+
     // Re-initialize scroll animation with new mobile state
     if (coffeeModel) {
         initScrollRotation();
@@ -512,7 +512,7 @@ function initGSAPAnimations() {
 
     // Section animations
     const sections = document.querySelectorAll('.about, .features, .gallery-preview, .cta-section');
-    
+
     sections.forEach(section => {
         gsap.from(section.querySelectorAll('.section-title, p, .btn, .feature-card, .gallery-item, .cta-content'), {
             scrollTrigger: {
@@ -597,14 +597,14 @@ function initGSAPAnimations() {
 function initNavigation() {
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 const navHeight = document.querySelector('.desktop-nav')?.offsetHeight || 0;
                 const mobileNavHeight = document.querySelector('.mobile-bottom-nav')?.offsetHeight || 0;
                 const offset = window.innerWidth <= 768 ? mobileNavHeight : navHeight;
-                
+
                 gsap.to(window, {
                     duration: 1,
                     scrollTo: {
@@ -657,7 +657,7 @@ async function loadMenuData() {
     try {
         const response = await fetch('data/menu-data.json');
         if (!response.ok) throw new Error('Failed to load menu data');
-        
+
         menuData = await response.json();
 
         // Hide loading
@@ -702,7 +702,7 @@ function renderCategoryTabs(container, categories) {
         tab.addEventListener('click', () => {
             container.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            
+
             const categoryId = tab.dataset.category;
             scrollToCategory(categoryId);
         });
@@ -714,7 +714,7 @@ function renderMenuItems(container, data) {
 
     container.innerHTML = data.categories.map(category => {
         const items = data.items.filter(item => item.category === category.id);
-        
+
         return `
             <div class="menu-category" id="category-${category.id}">
                 <h2 class="menu-category-title">${category.name}</h2>
@@ -772,7 +772,7 @@ function scrollToCategory(categoryId) {
     if (element) {
         const offset = 140; // Account for sticky header
         const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        
+
         window.scrollTo({
             top: elementPosition - offset,
             behavior: 'smooth'
@@ -829,7 +829,7 @@ function isValidEmail(email) {
 
 async function handleFormSubmit(e) {
     e.preventDefault();
-    
+
     const form = e.target;
     const submitBtn = form.querySelector('button[type="submit"]');
     const successEl = document.getElementById('form-success');
