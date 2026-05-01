@@ -58,7 +58,7 @@
                         <i class="ph ph-coffee"></i>
                         Découvrir le Menu
                     </a>
-                    <a href="contact.html" class="btn btn-secondary">
+                    <a href="https://maps.app.goo.gl/mMEXttrwE5eRCbN48" class="btn btn-secondary">
                         <i class="ph ph-map-pin"></i>
                         Nous Trouver
                     </a>
@@ -73,7 +73,7 @@
                         <span class="stat-label">Clients satisfaits</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">4.9</span>
+                        <span class="stat-number">5.0</span>
                         <span class="stat-label">Note moyenne</span>
                     </div>
                 </div>
@@ -138,6 +138,203 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="amenities-section" id="amenities">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nos Services</span>
+                <h2 class="section-title text-center">Ce Que Nous Proposons</h2>
+                <p class="section-subtitle">Des équipements et services pensés pour votre confort</p>
+            </div>
+
+            <!-- Dynamic Feature Showcase -->
+            <div class="feature-showcase" id="featureShowcase">
+                <!-- Main Feature Display -->
+                <div class="feature-main">
+                    <div class="feature-icon-main" id="featureIcon">
+                        <i class="ph ph-wheelchair"></i>
+                    </div>
+                    <h3 class="feature-title" id="featureTitle">Accessibilité</h3>
+                    <ul class="feature-items" id="featureItems">
+                        <li><i class="ph ph-check-circle"></i> Entrée accessible PMR</li>
+                        <li><i class="ph ph-check-circle"></i> Parking accessible</li>
+                        <li><i class="ph ph-check-circle"></i> Places assises PMR</li>
+                    </ul>
+                </div>
+
+                <!-- Progress Dots -->
+                <div class="feature-dots" id="featureDots">
+                    <button class="dot active" data-index="0" aria-label="Accessibilité"></button>
+                    <button class="dot" data-index="1" aria-label="Connectivité"></button>
+                    <button class="dot" data-index="2" aria-label="Espaces"></button>
+                    <button class="dot" data-index="3" aria-label="Parking"></button>
+                    <button class="dot" data-index="4" aria-label="Famille"></button>
+                    <button class="dot" data-index="5" aria-label="Animaux"></button>
+                    <button class="dot" data-index="6" aria-label="Restauration"></button>
+                    <button class="dot" data-index="7" aria-label="Réservation"></button>
+                    <button class="dot" data-index="8" aria-label="Paiement"></button>
+                </div>
+
+                <!-- Mini Preview Cards (Desktop) -->
+                <div class="feature-preview-grid" id="featurePreviewGrid">
+                    <button class="preview-card active" data-index="0">
+                        <i class="ph ph-wheelchair"></i>
+                        <span>Accessibilité</span>
+                    </button>
+                    <button class="preview-card" data-index="1">
+                        <i class="ph ph-wifi-high"></i>
+                        <span>Connectivité</span>
+                    </button>
+                    <button class="preview-card" data-index="2">
+                        <i class="ph ph-sun"></i>
+                        <span>Espaces</span>
+                    </button>
+                    <button class="preview-card" data-index="3">
+                        <i class="ph ph-car"></i>
+                        <span>Parking</span>
+                    </button>
+                    <button class="preview-card" data-index="4">
+                        <i class="ph ph-baby"></i>
+                        <span>Famille</span>
+                    </button>
+                    <button class="preview-card" data-index="5">
+                        <i class="ph ph-dog"></i>
+                        <span>Animaux</span>
+                    </button>
+                    <button class="preview-card" data-index="6">
+                        <i class="ph ph-cocktail"></i>
+                        <span>Restauration</span>
+                    </button>
+                    <button class="preview-card" data-index="7">
+                        <i class="ph ph-calendar-check"></i>
+                        <span>Réservation</span>
+                    </button>
+                    <button class="preview-card" data-index="8">
+                        <i class="ph ph-currency-dollar"></i>
+                        <span>Paiement</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        (function() {
+            const features = [
+                { icon: 'ph-wheelchair', title: 'Accessibilité', items: ['Entrée accessible PMR', 'Parking accessible', 'Places assises PMR'] },
+                { icon: 'ph-wifi-high', title: 'Connectivité', items: ['Wi-Fi gratuit', 'Wi-Fi haut débit', 'Prises disponibles'] },
+                { icon: 'ph-sun', title: 'Espaces', items: ['Terrasse extérieure', 'Toit-terrasse', 'Salle climatisée'] },
+                { icon: 'ph-car', title: 'Parking', items: ['Parking couvert gratuit', 'Accès facile'] },
+                { icon: 'ph-baby', title: 'Famille', items: ['Adapté aux familles', 'Menu enfant', 'Convient aux enfants'] },
+                { icon: 'ph-dog', title: 'Animaux', items: ['Chiens acceptés (terrasse)'] },
+                { icon: 'ph-cocktail', title: 'Restauration', items: ['Service sur place', 'À emporter', 'Happy hour', 'Cocktails'] },
+                { icon: 'ph-calendar-check', title: 'Réservation', items: ['Réservations acceptées', 'Service à table'] },
+                { icon: 'ph-currency-dollar', title: 'Paiement', items: ['Paiement en espèces'] }
+            ];
+
+            let currentIndex = 0;
+            let autoPlayInterval;
+            const AUTO_PLAY_DELAY = 4000;
+
+            const iconEl = document.querySelector('#featureIcon i');
+            const titleEl = document.getElementById('featureTitle');
+            const itemsEl = document.getElementById('featureItems');
+            const dots = document.querySelectorAll('#featureDots .dot');
+            const previewCards = document.querySelectorAll('#featurePreviewGrid .preview-card');
+
+            function updateFeature(index, direction = 1) {
+                const feature = features[index];
+
+                // Animate out
+                gsap.to([iconEl.parentElement, titleEl, itemsEl], {
+                    opacity: 0,
+                    y: direction > 0 ? -20 : 20,
+                    duration: 0.3,
+                    stagger: 0.05,
+                    onComplete: () => {
+                        // Update content
+                        iconEl.className = `ph ${feature.icon}`;
+                        titleEl.textContent = feature.title;
+                        itemsEl.innerHTML = feature.items.map(item =>
+                            `<li><i class="ph ph-check-circle"></i> ${item}</li>`
+                        ).join('');
+
+                        // Update active states
+                        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+                        previewCards.forEach((card, i) => card.classList.toggle('active', i === index));
+
+                        // Animate in
+                        gsap.fromTo([iconEl.parentElement, titleEl, itemsEl],
+                            { opacity: 0, y: direction > 0 ? 20 : -20 },
+                            { opacity: 1, y: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out' }
+                        );
+                    }
+                });
+
+                currentIndex = index;
+            }
+
+            function nextFeature() {
+                const next = (currentIndex + 1) % features.length;
+                updateFeature(next, 1);
+            }
+
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(nextFeature, AUTO_PLAY_DELAY);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(autoPlayInterval);
+            }
+
+            // Dot click handlers
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    stopAutoPlay();
+                    const direction = index > currentIndex ? 1 : -1;
+                    updateFeature(index, direction);
+                    startAutoPlay();
+                });
+            });
+
+            // Preview card click handlers
+            previewCards.forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    stopAutoPlay();
+                    const direction = index > currentIndex ? 1 : -1;
+                    updateFeature(index, direction);
+                    startAutoPlay();
+                });
+            });
+
+            // Pause on hover
+            const showcase = document.getElementById('featureShowcase');
+            showcase.addEventListener('mouseenter', stopAutoPlay);
+            showcase.addEventListener('mouseleave', startAutoPlay);
+
+            // Start auto-play
+            startAutoPlay();
+
+            // Initial animation
+            gsap.from('.feature-main', {
+                opacity: 0,
+                y: 30,
+                duration: 0.6,
+                delay: 0.3,
+                ease: 'power2.out'
+            });
+
+            gsap.from('.dot', {
+                opacity: 0,
+                scale: 0,
+                duration: 0.4,
+                stagger: 0.05,
+                delay: 0.5,
+                ease: 'back.out(1.7)'
+            });
+        })();
+        </script>
     </section>
 
     <!-- Signature Drinks Section -->
@@ -275,14 +472,14 @@
                         <i class="ph ph-star-fill"></i>
                         <i class="ph ph-star-fill"></i>
                     </div>
-                    <p class="testimonial-text">"Le meilleur café de Tanger, sans hésitation. L'ambiance est unique, les baristas connaissent vraiment leur métier. Mon rendez-vous quotidien !"</p>
+                    <p class="testimonial-text">"Café et patron très agréable je recommande fortement. Le prix et très raisonnable l’ambiance et bonne et le café et bien située !"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <i class="ph ph-user-circle"></i>
                         </div>
                         <div class="author-info">
-                            <strong>Amina L.</strong>
-                            <span>Cliente fidèle depuis 2020</span>
+                            <strong>Adam Bernier</strong>
+                            <span>Client fidèle</span>
                         </div>
                     </div>
                 </div>
@@ -294,14 +491,14 @@
                         <i class="ph ph-star-fill"></i>
                         <i class="ph ph-star-fill"></i>
                     </div>
-                    <p class="testimonial-text">"Enfin un café qui comprend le remote work ! WiFi ultra-rapide, prises partout, et un café qui reste chaud des heures. Je viens ici tous les jours pour travailler."</p>
+                    <p class="testimonial-text">"أحسن مقهى في آسفي ❤️"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <i class="ph ph-user-circle"></i>
                         </div>
                         <div class="author-info">
-                            <strong>Youssef M.</strong>
-                            <span>Développeur Freelance</span>
+                            <strong>Noursine Achemlal</strong>
+                            <span>Cliente fidèle</span>
                         </div>
                     </div>
                 </div>
@@ -313,14 +510,14 @@
                         <i class="ph ph-star-fill"></i>
                         <i class="ph ph-star-fill"></i>
                     </div>
-                    <p class="testimonial-text">"Le Khatra Spécial est une révélation ! Ce mélange de cardamome et d'espresso est unique. La carte fidélité est un plus génial aussi."</p>
+                    <p class="testimonial-text">"Mojito 🍸 Pina colada 😋😋😋😋"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">
                             <i class="ph ph-user-circle"></i>
                         </div>
                         <div class="author-info">
-                            <strong>Sofia B.</strong>
-                            <span>Food Blogger</span>
+                            <strong>AFRIKAT YASSER</strong>
+                            <span>Visiteur</span>
                         </div>
                     </div>
                 </div>
