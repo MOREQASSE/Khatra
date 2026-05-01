@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Khatra Coffee - Café artisanal à Tanger depuis 2015. Torréfaction maison, café d'exception, ambiance chaleureuse. Découvrez notre menu et rejoignez notre programme fidélité.">
-    <title>Khatra Coffee | Café Artisanal à Tanger depuis 2015</title>
+    <meta name="description" content="Khatra Coffee - Café artisanal à Safi. Torréfaction maison, café dense et mousseux, ambiance chaleureuse. Découvrez notre menu et rejoignez notre programme fidélité.">
+    <title>Khatra Coffee | Café Artisanal à Safi</title>
 
     <!-- Phosphor Icons CSS -->
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
@@ -49,7 +49,7 @@
             <div class="hero-text">
                 <div class="hero-badge">
                     <i class="ph ph-star-fill"></i>
-                    <span>Café préféré à Tanger</span>
+                    <span>Café artisanal à Safi</span>
                 </div>
                 <h1 class="hero-title">L'Art du Café, Authentique & Local</h1>
                 <p class="hero-subtitle">Découvrez l'essence du café marocain revisité. Torréfaction artisanale, grains soigneusement sélectionnés, et une ambiance chaleureuse qui vous attend à chaque visite.</p>
@@ -104,9 +104,10 @@
             <div class="about-content">
                 <div class="about-text">
                     <span class="section-label">Notre Histoire</span>
-                    <h2 class="section-title">De la Passion à Votre Tasse</h2>
-                    <p>Né en 2015 au cœur de Tanger, <strong>Khatra Coffee</strong> est né d'une passion simple : partager l'art du café authentique avec notre communauté. Notre nom "Khatra" (خطرة) évoque ce moment précieux où le temps s'arrête pour savourer l'instant présent.</p>
-                    <p>Nous sélectionnons nos grains avec soin auprès des meilleures plantations d'Éthiopie, de Colombie et du Guatemala, en privilégiant le commerce équitable et les pratiques durables. Chaque tasse que vous dégustez soutient directement des fermiers passionnés.</p>
+                    <h2 class="section-title">Un Refuge de Sérénité</h2>
+                    <p><strong>Khatra Coffee</strong> — le nom vient de "خاثرة", ce café dense et mousseux que les grand-mères préparaient lentement, au rythme des conversations et des rires partagés. C'est cette texture onctueuse, ce goût authentique que nous avons voulu ramener à Safi.</p>
+                    <p>Né le 1er avril de cette année, notre petit coin de paradis a vu le jour d'une envie simple : créer un lieu où le temps s'arrête. Entre les murs chaleureux de notre boutique, l'odeur des grains fraîchement moulus vous enveloppe comme une couverture douillette. Chaque tasse est une invitation à ralentir, à respirer, à savourer l'instant présent.</p>
+                    <p class="about-age">Notre première tasse partagée il y a <span id="monthsSinceLaunch">1</span> mois — et déjà tant de belles rencontres.</p>
                     <div class="about-values">
                         <div class="value-item">
                             <i class="ph ph-check-circle"></i>
@@ -132,7 +133,7 @@
                         <i class="ph ph-trophy"></i>
                         <div>
                             <strong>Meilleur Café</strong>
-                            <span>Tanger 2023</span>
+                            <span>Safi 2025</span>
                         </div>
                     </div>
                 </div>
@@ -151,6 +152,37 @@
 
             <!-- Dynamic Feature Showcase -->
             <div class="feature-showcase" id="featureShowcase">
+                <!-- Mobile Mini Icons (icon only) -->
+                <div class="feature-mini-icons" id="featureMiniIcons">
+                    <button class="mini-icon active" data-index="0" aria-label="Accessibilité">
+                        <i class="ph ph-wheelchair"></i>
+                    </button>
+                    <button class="mini-icon" data-index="1" aria-label="Connectivité">
+                        <i class="ph ph-wifi-high"></i>
+                    </button>
+                    <button class="mini-icon" data-index="2" aria-label="Espaces">
+                        <i class="ph ph-sun"></i>
+                    </button>
+                    <button class="mini-icon" data-index="3" aria-label="Parking">
+                        <i class="ph ph-car"></i>
+                    </button>
+                    <button class="mini-icon" data-index="4" aria-label="Famille">
+                        <i class="ph ph-baby"></i>
+                    </button>
+                    <button class="mini-icon" data-index="5" aria-label="Animaux">
+                        <i class="ph ph-dog"></i>
+                    </button>
+                    <button class="mini-icon" data-index="6" aria-label="Restauration">
+                        <i class="ph ph-fork-knife"></i>
+                    </button>
+                    <button class="mini-icon" data-index="7" aria-label="Réservation">
+                        <i class="ph ph-calendar-check"></i>
+                    </button>
+                    <button class="mini-icon" data-index="8" aria-label="Paiement">
+                        <i class="ph ph-currency-dollar"></i>
+                    </button>
+                </div>
+
                 <!-- Main Feature Display -->
                 <div class="feature-main">
                     <div class="feature-icon-main" id="featureIcon">
@@ -204,7 +236,7 @@
                         <span>Animaux</span>
                     </button>
                     <button class="preview-card" data-index="6">
-                        <i class="ph ph-cocktail"></i>
+                        <i class="ph ph-fork-knife"></i>
                         <span>Restauration</span>
                     </button>
                     <button class="preview-card" data-index="7">
@@ -228,7 +260,7 @@
                 { icon: 'ph-car', title: 'Parking', items: ['Parking couvert gratuit', 'Accès facile'] },
                 { icon: 'ph-baby', title: 'Famille', items: ['Adapté aux familles', 'Menu enfant', 'Convient aux enfants'] },
                 { icon: 'ph-dog', title: 'Animaux', items: ['Chiens acceptés (terrasse)'] },
-                { icon: 'ph-cocktail', title: 'Restauration', items: ['Service sur place', 'À emporter', 'Happy hour', 'Cocktails'] },
+                { icon: 'ph-fork-knife', title: 'Restauration', items: ['Service sur place', 'À emporter', 'Happy hour', 'Cocktails'] },
                 { icon: 'ph-calendar-check', title: 'Réservation', items: ['Réservations acceptées', 'Service à table'] },
                 { icon: 'ph-currency-dollar', title: 'Paiement', items: ['Paiement en espèces'] }
             ];
@@ -242,6 +274,7 @@
             const itemsEl = document.getElementById('featureItems');
             const dots = document.querySelectorAll('#featureDots .dot');
             const previewCards = document.querySelectorAll('#featurePreviewGrid .preview-card');
+            const miniIcons = document.querySelectorAll('#featureMiniIcons .mini-icon');
 
             function updateFeature(index, direction = 1) {
                 const feature = features[index];
@@ -263,6 +296,7 @@
                         // Update active states
                         dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
                         previewCards.forEach((card, i) => card.classList.toggle('active', i === index));
+                        miniIcons.forEach((icon, i) => icon.classList.toggle('active', i === index));
 
                         // Animate in
                         gsap.fromTo([iconEl.parentElement, titleEl, itemsEl],
@@ -308,6 +342,16 @@
                 });
             });
 
+            // Mini icon click handlers (mobile)
+            miniIcons.forEach((icon, index) => {
+                icon.addEventListener('click', () => {
+                    stopAutoPlay();
+                    const direction = index > currentIndex ? 1 : -1;
+                    updateFeature(index, direction);
+                    startAutoPlay();
+                });
+            });
+
             // Pause on hover
             const showcase = document.getElementById('featureShowcase');
             showcase.addEventListener('mouseenter', stopAutoPlay);
@@ -343,7 +387,7 @@
             <div class="section-header">
                 <span class="section-label">Nos Spécialités</span>
                 <h2 class="section-title text-center">Les Favoris de Nos Clients</h2>
-                <p class="section-subtitle">Découvrez les créations qui ont conquis le cœur de Tanger</p>
+                <p class="section-subtitle">Découvrez les créations qui conquièrent le cœur de Safi</p>
             </div>
             <div class="drinks-grid">
                 <div class="drink-card">
@@ -689,6 +733,26 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script>
+    // Calculate months since launch (April 1st)
+    (function() {
+        const launchDate = new Date(new Date().getFullYear(), 3, 1); // April is month 3 (0-indexed)
+        const now = new Date();
+
+        // If we're before April 1st this year, use last year's April
+        if (now < launchDate) {
+            launchDate.setFullYear(launchDate.getFullYear() - 1);
+        }
+
+        const monthsDiff = (now.getFullYear() - launchDate.getFullYear()) * 12 +
+                          (now.getMonth() - launchDate.getMonth());
+
+        const monthsElement = document.getElementById('monthsSinceLaunch');
+        if (monthsElement) {
+            monthsElement.textContent = monthsDiff;
+        }
+    })();
+    </script>
     <script>
     // Rate Us Component - Reusable Template
     (function() {
